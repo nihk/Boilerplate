@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 @Module
-class NetworkingModule {
+class RemoteDataModule {
 
     @Singleton
     @Provides
@@ -31,5 +31,4 @@ class NetworkingModule {
             .addCallAdapterFactory(rxJava2CallAdapterFactory)
             .build()
             .create(DummyService::class.java)
-
 }
