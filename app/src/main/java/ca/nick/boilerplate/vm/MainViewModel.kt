@@ -30,8 +30,8 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
         }
     }
 
-    fun fetchThenPersistLocally() =
-        repository.fetchThenPersistLocally()
+    fun fetchThenInsertLocally() =
+        repository.fetchThenInsertLocally()
             .applySchedulers()
             .subscribe(object : CompletableObserver {
                 override fun onSubscribe(d: Disposable) {

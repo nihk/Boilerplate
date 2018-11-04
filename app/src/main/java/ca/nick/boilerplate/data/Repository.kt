@@ -25,14 +25,15 @@ class Repository @Inject constructor(
         }
     }
 
-    fun fetchThenPersistLocally(): Completable =
-        service.fetch()
-            .flatMapCompletable { persistLocally(it) }
+    fun fetchThenInsertLocally(): Completable =
+        fetch().flatMapCompletable {
+            Completable.fromAction {
+                dao.deleteAll()
+                dao.insertEntities(it)
+            }
+        }
 
     fun fetch() = service.fetch()
-
-    fun persistLocally(items: List<Dummy>): Completable =
-        Completable.fromAction { dao.insertEntities(items) }
 
     fun isPersistedDataStale() = localDataCachingStrategy.isPersistedDataStale()
 

@@ -10,4 +10,7 @@ interface DummyDao : BaseDao<Dummy> {
 
     @Query("SELECT * FROM ${Dummy.TABLE_NAME}")
     fun queryAll(): LiveData<List<Dummy>>
+
+    @Query("DELETE FROM ${Dummy.TABLE_NAME}")
+    fun deleteAll()
 }
