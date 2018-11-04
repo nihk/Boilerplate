@@ -57,7 +57,7 @@ class MainFragment : BaseFragment() {
         })
 
         viewModel.items.observe(this, Observer { items ->
-            if (items.isEmpty() || (savedInstanceState == null && viewModel.isPersistedDataStale())) {
+            if (savedInstanceState == null && viewModel.isPersistedDataStale()) {
                 viewModel.fetchThenInsertLocally()
             } else {
                 submitList(items)
