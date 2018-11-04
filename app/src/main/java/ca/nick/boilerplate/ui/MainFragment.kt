@@ -63,10 +63,6 @@ class MainFragment : BaseFragment() {
                 submitList(items)
             }
         })
-
-        if (savedInstanceState == null) {
-            viewModel.fetchThenPersistLocally()
-        }
     }
 
     private fun submitList(items: List<Dummy>) {
