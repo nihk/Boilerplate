@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import ca.nick.boilerplate.R
 import ca.nick.boilerplate.data.Dummy
+import ca.nick.boilerplate.utils.visibleOrGone
 import ca.nick.boilerplate.vm.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -52,11 +53,11 @@ class MainFragment : BaseFragment() {
         })
 
         viewModel.progressBarState.observe(this, Observer {
-            progress_bar.visibility = if (it) View.VISIBLE else View.GONE
+            progress_bar.visibleOrGone(it)
         })
 
         viewModel.items.observe(this, Observer {
-            if (it.isEmpty() || viewModel.isPersistedDataStale()) {
+            if (it.isEmpty() || (viewModel.isPersistedDataStale() && savedInstanceState == null)) {
                 viewModel.fetchThenPersistLocally()
             } else {
                 submitList(it)
