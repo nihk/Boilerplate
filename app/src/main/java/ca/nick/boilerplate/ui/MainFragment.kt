@@ -56,11 +56,11 @@ class MainFragment : BaseFragment() {
             progress_bar.visibleOrGone(it)
         })
 
-        viewModel.items.observe(this, Observer {
-            if (it.isEmpty() || (viewModel.isPersistedDataStale() && savedInstanceState == null)) {
+        viewModel.items.observe(this, Observer { items ->
+            if (items.isEmpty() || (savedInstanceState == null && viewModel.isPersistedDataStale())) {
                 viewModel.fetchThenPersistLocally()
             } else {
-                submitList(it)
+                submitList(items)
             }
         })
 
