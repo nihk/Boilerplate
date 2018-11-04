@@ -7,5 +7,7 @@ import javax.inject.Inject
 abstract class BaseFragment : DaggerFragment() {
 
     @Inject
+    lateinit var navigator: Navigator
+    @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 }
