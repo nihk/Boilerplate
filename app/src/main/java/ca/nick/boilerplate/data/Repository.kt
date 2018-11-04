@@ -3,6 +3,7 @@ package ca.nick.boilerplate.data
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import ca.nick.boilerplate.data.local.DummyDao
+import ca.nick.boilerplate.data.local.LocalDataCachingStrategy
 import ca.nick.boilerplate.data.remote.DummyService
 import io.reactivex.Completable
 import javax.inject.Inject
@@ -11,7 +12,8 @@ import javax.inject.Singleton
 @Singleton
 class Repository @Inject constructor(
     private val service: DummyService,
-    private val dao: DummyDao
+    private val dao: DummyDao,
+    private val localDataCachingStrategy: LocalDataCachingStrategy
 ) {
 
     private val _items = MediatorLiveData<List<Dummy>>()
@@ -31,4 +33,8 @@ class Repository @Inject constructor(
 
     fun persistLocally(items: List<Dummy>): Completable =
         Completable.fromAction { dao.insertEntities(items) }
+
+    fun isPersistedDataStale() = localDataCachingStrategy.isPersistedDataStale()
+
+    fun setLastTimeDataFetchedSuccessfully() = localDataCachingStrategy.setLastTimeDataFetchedSuccessfully()
 }

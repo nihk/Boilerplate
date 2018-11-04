@@ -41,6 +41,7 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
 
                 override fun onComplete() {
                     _progressBarState.value = false
+                    setLastTimeDataFetchedSuccessfully()
                 }
 
                 override fun onError(e: Throwable) {
@@ -48,6 +49,10 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
                     _errorMessage.value = Event(e.message)
                 }
             })
+
+    fun isPersistedDataStale() = repository.isPersistedDataStale()
+
+    fun setLastTimeDataFetchedSuccessfully() = repository.setLastTimeDataFetchedSuccessfully()
 
     override fun onCleared() {
         super.onCleared()

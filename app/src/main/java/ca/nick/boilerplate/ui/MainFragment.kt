@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import ca.nick.boilerplate.R
+import ca.nick.boilerplate.data.Dummy
 import ca.nick.boilerplate.vm.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -41,8 +42,12 @@ class MainFragment : BaseFragment() {
             .get(MainViewModel::class.java)
 
         viewModel.errorMessage.observe(this, Observer { event ->
-            event.getContentIfNotHandled()?.let {
-                Snackbar.make(root, it, Snackbar.LENGTH_SHORT).show()
+            event.getContentIfNotHandled()?.let { message ->
+                Snackbar.make(root, message, Snackbar.LENGTH_SHORT).show()
+                // Fallback to locally cached data, if any
+                viewModel.items.value?.let { items ->
+                    submitList(items)
+                }
             }
         })
 
@@ -51,11 +56,19 @@ class MainFragment : BaseFragment() {
         })
 
         viewModel.items.observe(this, Observer {
-            adapter.submitList(it)
+            if (it.isEmpty() || viewModel.isPersistedDataStale()) {
+                viewModel.fetchThenPersistLocally()
+            } else {
+                submitList(it)
+            }
         })
 
         if (savedInstanceState == null) {
             viewModel.fetchThenPersistLocally()
         }
+    }
+
+    private fun submitList(items: List<Dummy>) {
+        adapter.submitList(items)
     }
 }
