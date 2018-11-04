@@ -9,7 +9,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 
-@Module(includes = [RemoteDataModule::class, LocalDataModule::class])
+@Module
 abstract class ViewModelModule {
 
     @Binds

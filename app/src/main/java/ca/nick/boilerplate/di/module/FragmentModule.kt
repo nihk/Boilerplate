@@ -4,7 +4,7 @@ import ca.nick.boilerplate.ui.MainFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
-@Module(includes = [ViewModelModule::class])
+@Module
 abstract class FragmentModule {
 
     @ContributesAndroidInjector
