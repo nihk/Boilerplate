@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.di.modules
+package ca.nick.boilerplate.di.module
 
 import ca.nick.boilerplate.data.remote.DummyService
 import dagger.Module

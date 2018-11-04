@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import ca.nick.boilerplate.R
 import ca.nick.boilerplate.data.Dummy
-import ca.nick.boilerplate.utils.DummyDiffCallback
+import ca.nick.boilerplate.util.DummyDiffCallback
 
 class DummyListAdapter : ListAdapter<Dummy, DummyViewHolder>(DummyDiffCallback) {
 

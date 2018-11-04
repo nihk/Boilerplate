@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.utils
+package ca.nick.boilerplate.util
 
 open class Event<out T>(private val content: T) {
 

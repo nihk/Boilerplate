@@ -1,6 +1,6 @@
 package ca.nick.boilerplate
 
-import ca.nick.boilerplate.di.components.DaggerAppComponent
+import ca.nick.boilerplate.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import timber.log.Timber

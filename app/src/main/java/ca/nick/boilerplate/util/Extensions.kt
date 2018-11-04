@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.utils
+package ca.nick.boilerplate.util
 
 import android.view.View
 import io.reactivex.Completable

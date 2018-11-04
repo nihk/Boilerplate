@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import ca.nick.boilerplate.R
 import ca.nick.boilerplate.data.Dummy
-import ca.nick.boilerplate.utils.visibleOrGone
+import ca.nick.boilerplate.util.visibleOrGone
 import ca.nick.boilerplate.vm.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_main.*

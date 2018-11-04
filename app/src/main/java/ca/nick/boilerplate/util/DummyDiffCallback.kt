@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.utils
+package ca.nick.boilerplate.util
 
 import androidx.recyclerview.widget.DiffUtil
 import ca.nick.boilerplate.data.Dummy

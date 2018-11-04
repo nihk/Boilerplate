@@ -1,11 +1,11 @@
-package ca.nick.boilerplate.di.modules
+package ca.nick.boilerplate.di.module
 
 import android.app.Application
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import androidx.room.Room
 import ca.nick.boilerplate.data.local.Db
-import ca.nick.boilerplate.di.annotations.StaleDataThreshold
+import ca.nick.boilerplate.di.annotation.StaleDataThreshold
 import dagger.Module
 import dagger.Provides
 import java.util.concurrent.TimeUnit

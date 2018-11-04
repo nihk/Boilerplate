@@ -1,8 +1,8 @@
-package ca.nick.boilerplate.di.modules
+package ca.nick.boilerplate.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import ca.nick.boilerplate.di.annotations.ViewModelKey
+import ca.nick.boilerplate.di.annotation.ViewModelKey
 import ca.nick.boilerplate.vm.MainViewModel
 import ca.nick.boilerplate.vm.VmFactory
 import dagger.Binds

@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.utils
+package ca.nick.boilerplate.util
 
 sealed class Resource<out T> {
     class Loading<out T> : Resource<T>()

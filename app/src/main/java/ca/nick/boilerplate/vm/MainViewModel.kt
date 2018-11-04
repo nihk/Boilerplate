@@ -6,8 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ca.nick.boilerplate.data.Dummy
 import ca.nick.boilerplate.data.Repository
-import ca.nick.boilerplate.utils.Event
-import ca.nick.boilerplate.utils.applySchedulers
+import ca.nick.boilerplate.util.Event
+import ca.nick.boilerplate.util.applySchedulers
 import io.reactivex.CompletableObserver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

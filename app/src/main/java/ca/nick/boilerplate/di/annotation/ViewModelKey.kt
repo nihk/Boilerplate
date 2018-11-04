@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.di.annotations
+package ca.nick.boilerplate.di.annotation
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

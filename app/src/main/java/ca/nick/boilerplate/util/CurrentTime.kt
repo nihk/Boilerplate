@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.utils
+package ca.nick.boilerplate.util
 
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.di.modules
+package ca.nick.boilerplate.di.module
 
 import ca.nick.boilerplate.ui.MainFragment
 import dagger.Module

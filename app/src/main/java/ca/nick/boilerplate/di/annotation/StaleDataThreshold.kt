@@ -1,4 +1,4 @@
-package ca.nick.boilerplate.di.annotations
+package ca.nick.boilerplate.di.annotation
 
 import javax.inject.Qualifier
 
