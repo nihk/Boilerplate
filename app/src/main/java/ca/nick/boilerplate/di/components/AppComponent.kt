@@ -1,7 +1,8 @@
-package ca.nick.boilerplate.di
+package ca.nick.boilerplate.di.components
 
 import android.app.Application
 import ca.nick.boilerplate.App
+import ca.nick.boilerplate.di.modules.ActivityModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

@@ -1,7 +1,7 @@
 package ca.nick.boilerplate.data.local
 
 import android.content.SharedPreferences
-import ca.nick.boilerplate.di.StaleDataThreshold
+import ca.nick.boilerplate.di.annotations.StaleDataThreshold
 import ca.nick.boilerplate.utils.CurrentTime
 import javax.inject.Inject
 import javax.inject.Singleton
